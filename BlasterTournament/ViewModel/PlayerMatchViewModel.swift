@@ -23,7 +23,7 @@ class PlayerMatchViewModel: ObservableObject {
     
     func fetchContestInfo() async throws {
         let playerList: PlayersInfo = try await fetch(urlString: Constants.playerInfoUrl)
-        // let matches: PlayerList = try await fetch(urlString: Constants.matchInfoUrl)
+        let matches: MatchDetails = try await fetch(urlString: Constants.matchInfoUrl)
         await MainActor.run {
             players = playerList.map(Self.createPlayer)
         }
@@ -36,7 +36,7 @@ class PlayerMatchViewModel: ObservableObject {
     }
     
     private func fetch<T: Codable>(urlString: String) async throws -> T {
-        guard let url = URL(string: Constants.playerInfoUrl) else {
+        guard let url = URL(string: urlString) else {
             throw ApiError.badURL
         }
         
