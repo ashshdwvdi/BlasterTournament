@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    let matchesScores: MatchesScores = PlayerMatchScore.dummy
     var players: [Player] = Player.dummy
     
     var body: some View {
@@ -23,7 +24,7 @@ struct ContentView: View {
                         .fontWeight(.semibold)
                     List(players) { player in
                         NavigationLink {
-                            Text("here is details view for : \(player.name)")
+                            MatchScores(matches: matchesScores)
                         } label: {
                             PlayerView(player: player)
                         }
