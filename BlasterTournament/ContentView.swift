@@ -22,7 +22,11 @@ struct ContentView: View {
                         .padding(.vertical, 10)
                         .fontWeight(.semibold)
                     List(players) { player in
-                        PlayerView(player: player)
+                        NavigationLink {
+                            Text("here is details view for : \(player.name)")
+                        } label: {
+                            PlayerView(player: player)
+                        }
                     }
                     .listStyle(.plain)
                     .navigationTitle(Constants.title)
