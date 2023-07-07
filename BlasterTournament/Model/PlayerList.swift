@@ -7,13 +7,14 @@
 
 import Foundation
 
-typealias PlayerList = [PlayerMatchDetail]
+typealias MatchDetails = [PlayerMatchDetail]
 
 struct PlayerMatchDetail: Codable {
-    let match: Int?
-    let player1, player2: PlayerModel?
+    var match: Int
+    var player1: PlayerModel
+    var player2: PlayerModel
 }
 
 struct PlayerModel: Codable {
-    let id, score: Int
+    var id, score: Int
 }
