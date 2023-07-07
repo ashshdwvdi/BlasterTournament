@@ -12,6 +12,7 @@
 		BEA8A6232A5816C200F2DDF1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA8A6222A5816C200F2DDF1 /* Assets.xcassets */; };
 		BEA8A6262A5816C200F2DDF1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA8A6252A5816C200F2DDF1 /* Preview Assets.xcassets */; };
 		BEA8A62D2A581DD400F2DDF1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A62C2A581DD400F2DDF1 /* Constants.swift */; };
+		BEA8A6312A581E2A00F2DDF1 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A6302A581E2A00F2DDF1 /* PlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		BEA8A6222A5816C200F2DDF1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA8A6252A5816C200F2DDF1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEA8A62C2A581DD400F2DDF1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		BEA8A6302A581E2A00F2DDF1 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				BEA8A61E2A5816C000F2DDF1 /* BlasterTournamentApp.swift */,
 				BEA8A6202A5816C000F2DDF1 /* ContentView.swift */,
+				BEA8A62F2A581E1B00F2DDF1 /* View */,
 				BEA8A62E2A581DEE00F2DDF1 /* Util */,
 				BEA8A6222A5816C200F2DDF1 /* Assets.xcassets */,
 				BEA8A6242A5816C200F2DDF1 /* Preview Content */,
@@ -76,6 +79,14 @@
 				BEA8A62C2A581DD400F2DDF1 /* Constants.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		BEA8A62F2A581E1B00F2DDF1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BEA8A6302A581E2A00F2DDF1 /* PlayerView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +162,7 @@
 				BEA8A6212A5816C000F2DDF1 /* ContentView.swift in Sources */,
 				BEA8A61F2A5816C000F2DDF1 /* BlasterTournamentApp.swift in Sources */,
 				BEA8A62D2A581DD400F2DDF1 /* Constants.swift in Sources */,
+				BEA8A6312A581E2A00F2DDF1 /* PlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

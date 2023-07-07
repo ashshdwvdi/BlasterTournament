@@ -30,34 +30,13 @@ struct ContentView: View {
                         .padding(.vertical, 10)
                         .fontWeight(.semibold)
                     List(players) { player in
-                        PlayerView(player)
+                        PlayerView(player: player)
                     }
                     .listStyle(.plain)
                     .navigationTitle(Constants.title)
                     .navigationBarTitleDisplayMode(.inline)
                 }
             }
-        }
-    }
-    
-    @ViewBuilder
-    private func PlayerView(_ player: Player) -> some View {
-        HStack(spacing: 20) {
-            AsyncImage(url: URL(string: player.imageName)) { image in
-                image
-                    .resizable()
-                    .frame(width: 50, height: 50)
-            } placeholder: {
-                Color.gray.opacity(0.2)
-                    .frame(width: 50, height: 50)
-            }
-            Text(player.name)
-                .font(.body)
-                .fontWeight(.semibold)
-                .foregroundColor(.black)
-            Spacer()
-            Text(player.score, format: .number)
-                .fontWeight(.semibold)
         }
     }
 }
