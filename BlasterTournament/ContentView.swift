@@ -16,9 +16,6 @@ struct Player: Identifiable {
 }
 
 struct ContentView: View {
-    private static let title: String = "Star Wars Blaster Tournament"
-    private static let headerTitle: String = "Points Table"
-    
     var players: [Player] = Player.dummy
     
     var body: some View {
@@ -28,7 +25,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack(alignment: .leading) {
                     Divider()
-                    Text(Self.headerTitle)
+                    Text(Constants.headerTitle)
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                         .fontWeight(.semibold)
@@ -36,7 +33,7 @@ struct ContentView: View {
                         PlayerView(player)
                     }
                     .listStyle(.plain)
-                    .navigationTitle(Self.title)
+                    .navigationTitle(Constants.title)
                     .navigationBarTitleDisplayMode(.inline)
                 }
             }
