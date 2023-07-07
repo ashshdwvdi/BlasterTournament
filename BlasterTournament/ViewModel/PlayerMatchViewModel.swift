@@ -25,6 +25,20 @@ class PlayerMatchViewModel: ObservableObject {
         let playerList: PlayersInfo = try await fetch(urlString: Constants.playerInfoUrl)
         let matches: MatchDetails = try await fetch(urlString: Constants.matchInfoUrl)
         let playerScores = calculateScores(from: matches)
+        var playersMap: [Int: String] = [:]
+        
+        playerList.forEach { contestant in
+            playersMap[contestant.id] = contestant.name
+        }
+        
+        self.matchesScores =  matches.map { playerDetail in
+            PlayerMatchScore(
+                opponent: playersMap[playerDetail.player1.id] ?? "",
+                player: playersMap[playerDetail.player2.id] ?? "",
+                opponentScore: playerDetail.player1.score,
+                score: playerDetail.player2.score
+            )
+        }
         
         await MainActor.run {
             players = playerList.map { contestant in
@@ -37,6 +51,10 @@ class PlayerMatchViewModel: ObservableObject {
             }
             .sorted { $0.score > $1.score }
         }
+    }
+    
+    func getMatchDetails(for playerId: Int) -> MatchesScores {
+        return self.matchesScores
     }
     
     // MARK: - Api Helper
