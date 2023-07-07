@@ -53,8 +53,11 @@ class PlayerMatchViewModel: ObservableObject {
         }
     }
     
-    func getMatchDetails(for playerId: Int) -> MatchesScores {
-        return self.matchesScores
+    // TODO: - fix this use player id instead of name here.
+    func getMatchDetails(for playerName: String) -> MatchesScores {
+        return self.matchesScores.filter { match in
+            match.player == playerName
+        }
     }
     
     // MARK: - Api Helper

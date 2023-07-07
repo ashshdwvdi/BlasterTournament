@@ -23,7 +23,7 @@ struct ContentView: View {
                         .fontWeight(.semibold)
                     List(viewModel.players) { player in
                         NavigationLink {
-                            MatchScores(matches: viewModel.getMatchDetails(for: player.id))
+                            MatchScores(matches: viewModel.getMatchDetails(for: player.name))
                         } label: {
                             PlayerView(player: player)
                         }
