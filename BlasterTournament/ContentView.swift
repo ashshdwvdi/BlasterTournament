@@ -23,18 +23,44 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(alignment: .leading) {
-                Divider()
-                Text(Self.headerTitle)
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
-                List(players) { player in
-                    Text(player.name)
+            ZStack {
+                Color.gray.opacity(0.05)
+                    .edgesIgnoringSafeArea(.all)
+                VStack(alignment: .leading) {
+                    Divider()
+                    Text(Self.headerTitle)
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 10)
+                        .fontWeight(.semibold)
+                    List(players) { player in
+                        PlayerView(player)
+                    }
+                    .listStyle(.plain)
+                    .navigationTitle(Self.title)
+                    .navigationBarTitleDisplayMode(.inline)
                 }
-                .listStyle(.plain)
-                .navigationTitle(Self.title)
-                .navigationBarTitleDisplayMode(.inline)
             }
+        }
+    }
+    
+    @ViewBuilder
+    private func PlayerView(_ player: Player) -> some View {
+        HStack(spacing: 20) {
+            AsyncImage(url: URL(string: player.imageName)) { image in
+                image
+                    .resizable()
+                    .frame(width: 50, height: 50)
+            } placeholder: {
+                Color.gray.opacity(0.2)
+                    .frame(width: 50, height: 50)
+            }
+            Text(player.name)
+                .font(.body)
+                .fontWeight(.semibold)
+                .foregroundColor(.black)
+            Spacer()
+            Text(player.score, format: .number)
+                .fontWeight(.semibold)
         }
     }
 }
