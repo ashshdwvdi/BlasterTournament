@@ -23,9 +23,8 @@ class PlayerMatchViewModel: ObservableObject {
     
     func fetchContestInfo() async throws {
         let playerList: PlayersInfo = try await fetch(urlString: Constants.playerInfoUrl)
-        let matches: PlayerList = try await fetch(urlString: Constants.matchInfoUrl)
-        
-        try await MainActor.run {
+        // let matches: PlayerList = try await fetch(urlString: Constants.matchInfoUrl)
+        await MainActor.run {
             players = playerList.map(Self.createPlayer)
         }
     }
