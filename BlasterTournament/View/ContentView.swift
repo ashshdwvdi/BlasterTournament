@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let matchesScores: MatchesScores = PlayerMatchScore.dummy
-    var players: [Player] = Player.dummy
+    @StateObject var viewModel = PlayerMatchViewModel()
     
     var body: some View {
         NavigationStack {
@@ -22,9 +21,9 @@ struct ContentView: View {
                         .padding(.horizontal, 20)
                         .padding(.vertical, 10)
                         .fontWeight(.semibold)
-                    List(players) { player in
+                    List(viewModel.players) { player in
                         NavigationLink {
-                            MatchScores(matches: matchesScores)
+//                            MatchScores(matches: viewModel.matchesScores)
                         } label: {
                             PlayerView(player: player)
                         }
@@ -33,6 +32,13 @@ struct ContentView: View {
                     .navigationTitle(Constants.title)
                     .navigationBarTitleDisplayMode(.inline)
                 }
+            }
+        }
+        .task {
+            do {
+                try await viewModel.fetchContestInfo()
+            } catch {
+                print("Error \(error)")
             }
         }
     }

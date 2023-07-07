@@ -18,6 +18,7 @@
 		BEA8A6382A58209B00F2DDF1 /* PlayerMatchScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A6372A58209B00F2DDF1 /* PlayerMatchScore.swift */; };
 		BEA8A63A2A58255000F2DDF1 /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A6392A58255000F2DDF1 /* PlayerList.swift */; };
 		BEA8A63C2A5825D800F2DDF1 /* MatchDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A63B2A5825D800F2DDF1 /* MatchDetailModel.swift */; };
+		BEA8A63F2A58266E00F2DDF1 /* PlayerMatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A63E2A58266E00F2DDF1 /* PlayerMatchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		BEA8A6372A58209B00F2DDF1 /* PlayerMatchScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMatchScore.swift; sourceTree = "<group>"; };
 		BEA8A6392A58255000F2DDF1 /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
 		BEA8A63B2A5825D800F2DDF1 /* MatchDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailModel.swift; sourceTree = "<group>"; };
+		BEA8A63E2A58266E00F2DDF1 /* PlayerMatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMatchViewModel.swift; sourceTree = "<group>"; };
+		BEA8A6402A582CD700F2DDF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,9 +68,11 @@
 		BEA8A61D2A5816C000F2DDF1 /* BlasterTournament */ = {
 			isa = PBXGroup;
 			children = (
+				BEA8A6402A582CD700F2DDF1 /* Info.plist */,
 				BEA8A61E2A5816C000F2DDF1 /* BlasterTournamentApp.swift */,
 				BEA8A6322A581E9A00F2DDF1 /* Model */,
 				BEA8A62F2A581E1B00F2DDF1 /* View */,
+				BEA8A63D2A58263F00F2DDF1 /* ViewModel */,
 				BEA8A62E2A581DEE00F2DDF1 /* Util */,
 				BEA8A6222A5816C200F2DDF1 /* Assets.xcassets */,
 				BEA8A6242A5816C200F2DDF1 /* Preview Content */,
@@ -110,6 +115,14 @@
 				BEA8A63B2A5825D800F2DDF1 /* MatchDetailModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BEA8A63D2A58263F00F2DDF1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BEA8A63E2A58266E00F2DDF1 /* PlayerMatchViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +204,7 @@
 				BEA8A63C2A5825D800F2DDF1 /* MatchDetailModel.swift in Sources */,
 				BEA8A6342A581EAD00F2DDF1 /* Player.swift in Sources */,
 				BEA8A6312A581E2A00F2DDF1 /* PlayerView.swift in Sources */,
+				BEA8A63F2A58266E00F2DDF1 /* PlayerMatchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +335,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BlasterTournament/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlasterTournament/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -349,6 +364,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"BlasterTournament/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = BlasterTournament/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

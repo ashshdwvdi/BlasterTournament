@@ -10,8 +10,8 @@ import Foundation
 typealias PlayerList = [PlayerMatchDetail]
 
 struct PlayerMatchDetail: Codable {
-    let match: Int
-    let player1, player2: PlayerModel
+    let match: Int?
+    let player1, player2: PlayerModel?
 }
 
 struct PlayerModel: Codable {
