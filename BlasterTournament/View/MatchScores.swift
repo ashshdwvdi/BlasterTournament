@@ -19,8 +19,19 @@ struct MatchScores: View {
                 Spacer()
                 Text(score.player)
             }
-            .padding(10)
+            .padding(20)
+            .background(matchResult(player: score.score, against: score.opponentScore))
         }
         .listStyle(.plain)
+    }
+    
+    private func matchResult(player: Int, against opponent: Int) -> Color {
+        if player > opponent {
+            return Color.green
+        } else if player < opponent {
+            return Color.red
+        } else {
+            return Color.white
+        }
     }
 }
