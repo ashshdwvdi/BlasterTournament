@@ -17,6 +17,7 @@
 		BEA8A6362A58206C00F2DDF1 /* MatchScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A6352A58206C00F2DDF1 /* MatchScores.swift */; };
 		BEA8A6382A58209B00F2DDF1 /* PlayerMatchScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A6372A58209B00F2DDF1 /* PlayerMatchScore.swift */; };
 		BEA8A63A2A58255000F2DDF1 /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A6392A58255000F2DDF1 /* PlayerList.swift */; };
+		BEA8A63C2A5825D800F2DDF1 /* MatchDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA8A63B2A5825D800F2DDF1 /* MatchDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		BEA8A6352A58206C00F2DDF1 /* MatchScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchScores.swift; sourceTree = "<group>"; };
 		BEA8A6372A58209B00F2DDF1 /* PlayerMatchScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMatchScore.swift; sourceTree = "<group>"; };
 		BEA8A6392A58255000F2DDF1 /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
+		BEA8A63B2A5825D800F2DDF1 /* MatchDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				BEA8A6332A581EAD00F2DDF1 /* Player.swift */,
 				BEA8A6372A58209B00F2DDF1 /* PlayerMatchScore.swift */,
 				BEA8A6392A58255000F2DDF1 /* PlayerList.swift */,
+				BEA8A63B2A5825D800F2DDF1 /* MatchDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				BEA8A62D2A581DD400F2DDF1 /* Constants.swift in Sources */,
 				BEA8A63A2A58255000F2DDF1 /* PlayerList.swift in Sources */,
 				BEA8A6382A58209B00F2DDF1 /* PlayerMatchScore.swift in Sources */,
+				BEA8A63C2A5825D800F2DDF1 /* MatchDetailModel.swift in Sources */,
 				BEA8A6342A581EAD00F2DDF1 /* Player.swift in Sources */,
 				BEA8A6312A581E2A00F2DDF1 /* PlayerView.swift in Sources */,
 			);
