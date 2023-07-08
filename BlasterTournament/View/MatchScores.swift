@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MatchScores: View {
     let matches: MatchesScores
+    let currentPlayer: String
     
     var body: some View {
         List(matches) { score in
@@ -26,12 +27,23 @@ struct MatchScores: View {
             .padding(20)
             .listRowSeparator(.hidden)
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-            .background(matchResult(player: score.score, against: score.opponentScore))
+            .background(matchResult(score))
         }
         .listStyle(.plain)
     }
     
-    private func matchResult(player: Int, against opponent: Int) -> Color {
+    private func matchResult(_ match: PlayerMatchScore) -> Color {
+        var player: Int
+        var opponent: Int
+        
+        if match.player == currentPlayer {
+            player = match.score
+            opponent = match.opponentScore
+        } else {
+            player = match.opponentScore
+            opponent = match.score
+        }
+        
         if player > opponent {
             return Color.green
         } else if player < opponent {
