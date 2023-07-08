@@ -16,7 +16,9 @@ struct ContentView: View {
                 Color.gray.opacity(0.05)
                     .edgesIgnoringSafeArea(.all)
                 if viewModel.players.isEmpty {
-                    ProgressView()
+                    ProgressView {
+                        Text("LOADING")
+                    }
                 } else {
                     VStack(alignment: .leading) {
                         Divider()
