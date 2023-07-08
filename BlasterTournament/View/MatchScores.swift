@@ -14,10 +14,14 @@ struct MatchScores: View {
         List(matches) { score in
             HStack {
                 Text(score.opponent)
+                    .frame(alignment: .leading)
+                    .frame(maxWidth: 100)
                 Spacer()
                 Text("\(score.opponentScore) - \(score.score)")
                 Spacer()
                 Text(score.player)
+                    .frame(alignment: .trailing)
+                    .frame(maxWidth: 100)
             }
             .padding(20)
             .listRowSeparator(.hidden)
