@@ -56,7 +56,7 @@ class PlayerMatchViewModel: ObservableObject {
     // TODO: - fix this use player id instead of name here.
     func getMatchDetails(for playerName: String) -> MatchesScores {
         return self.matchesScores.filter { match in
-            match.player == playerName
+            match.player == playerName || match.opponent == playerName
         }
     }
     
@@ -84,8 +84,11 @@ class PlayerMatchViewModel: ObservableObject {
             
             if p1 > p2 {
                 p1Score += 3
-            } else {
+            } else if p2 > p1 {
                 p2Score += 3
+            } else if p1 == p2 {
+                p1Score += 1
+                p2Score += 1
             }
             
             // contestant1 1 score update
@@ -97,9 +100,9 @@ class PlayerMatchViewModel: ObservableObject {
             
             // contestant1 2 score update
             if let contestant2 = playerScores[match.player2.id] {
-                playerScores[match.player1.id] = contestant2 + p2Score
+                playerScores[match.player2.id] = contestant2 + p2Score
             } else {
-                playerScores[match.player1.id] = p2Score
+                playerScores[match.player2.id] = p2Score
             }
         }
         return playerScores

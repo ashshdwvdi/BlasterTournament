@@ -20,6 +20,8 @@ struct MatchScores: View {
                 Text(score.player)
             }
             .padding(20)
+            .listRowSeparator(.hidden)
+            .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
             .background(matchResult(player: score.score, against: score.opponentScore))
         }
         .listStyle(.plain)
