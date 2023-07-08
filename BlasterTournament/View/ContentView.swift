@@ -31,6 +31,15 @@ struct ContentView: View {
                     .listStyle(.plain)
                     .navigationTitle(Constants.title)
                     .navigationBarTitleDisplayMode(.inline)
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(Constants.sortString) {
+                                Task {
+                                    await viewModel.toggleSort()
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

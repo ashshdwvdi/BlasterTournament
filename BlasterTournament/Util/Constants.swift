@@ -12,4 +12,5 @@ enum Constants {
     static let headerTitle = NSLocalizedString("Points Table", comment: "Points Table")
     static let playerInfoUrl = "https://api.npoint.io/ca180e840b481675d500"
     static let matchInfoUrl = "https://api.npoint.io/bc3f07c7442e85446788"
+    static let sortString = NSLocalizedString("sort", comment: "sort")
 }

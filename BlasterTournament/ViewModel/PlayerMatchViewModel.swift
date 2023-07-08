@@ -8,9 +8,10 @@
 import Foundation
 
 class PlayerMatchViewModel: ObservableObject {
-    private var matchesScores: MatchesScores = []
     @Published var players: [Player] = []
     
+    private var matchesScores: MatchesScores = []
+    private var sortResultsDsc: Bool = false
     private let session: URLSession
     
     private enum ApiError: Error {
@@ -57,6 +58,20 @@ class PlayerMatchViewModel: ObservableObject {
     func getMatchDetails(for playerName: String) -> MatchesScores {
         return self.matchesScores.filter { match in
             match.player == playerName || match.opponent == playerName
+        }
+    }
+    
+    func toggleSort() async {
+        sortResultsDsc.toggle()
+        
+        await MainActor.run {
+            self.players.sort { p1, p2 in
+                if sortResultsDsc {
+                    return p1.score < p2.score
+                } else {
+                    return p1.score > p2.score
+                }
+            }
         }
     }
     
